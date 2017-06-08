@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="debug_shared|Win32">
@@ -11,6 +11,10 @@
     </ProjectConfiguration>
     <ProjectConfiguration Include="debug_static_mt|Win32">
       <Configuration>debug_static_mt</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="reldeb_static_mt|Win32">
+      <Configuration>reldeb_static_mt</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
     <ProjectConfiguration Include="release_shared|Win32">
@@ -32,7 +36,7 @@
     <RootNamespace>NetSSL_OpenSSL</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_static_md|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
@@ -44,6 +48,11 @@
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_static_mt|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v140</PlatformToolset>
@@ -63,27 +72,30 @@
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_static_md|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_static_md|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_static_mt|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_static_mt|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release_shared|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug_shared|Win32'" Label="PropertySheets">
-    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props"/>
+    <Import Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" />
   </ImportGroup>
-  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>14.0.23107.0</_ProjectFileVersion>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='debug_shared|Win32'">PocoNetSSLd</TargetName>
@@ -92,32 +104,51 @@
     <TargetName Condition="'$(Configuration)|$(Platform)'=='release_shared|Win32'">PocoNetSSL</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='release_static_md|Win32'">PocoNetSSLmd</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='release_static_mt|Win32'">PocoNetSSLmt</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'">PocoNetSSLmt</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_shared|Win32'">
     <OutDir>..\bin\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_shared|Win32'">
     <OutDir>..\bin\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_static_mt|Win32'">
     <OutDir>..\lib\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_static_mt|Win32'">
     <OutDir>..\lib\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'">
+    <OutDir>..\lib\</OutDir>
+    <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug_static_md|Win32'">
     <OutDir>..\lib\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release_static_md|Win32'">
     <OutDir>..\lib\</OutDir>
     <IntDir>obj\NetSSL_OpenSSL\$(Configuration)\</IntDir>
+    <IncludePath>C:\OpenSSL-Win32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\OpenSSL-Win32\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug_shared|Win32'">
     <ClCompile>
@@ -132,10 +163,11 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libeay32.lib;ssleay32.lib;ws2_32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -164,10 +196,11 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat/>
+      <DebugInformationFormat />
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <AdditionalDependencies>libeay32.lib;ssleay32.lib;ws2_32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -195,11 +228,12 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <ProgramDataBaseFileName>..\lib\PocoNetSSLmtd.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <OutputFile>..\lib\PocoNetSSLmtd.lib</OutputFile>
@@ -220,10 +254,39 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat/>
+      <DebugInformationFormat />
       <CompileAs>Default</CompileAs>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\lib\PocoNetSSLmt.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>.\include;..\Foundation\include;..\Net\include;..\Util\include;..\Crypto\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;POCO_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProgramDataBaseFileName>..\lib\PocoNetSSLmt.pdb</ProgramDataBaseFileName>
     </ClCompile>
     <Lib>
       <OutputFile>..\lib\PocoNetSSLmt.lib</OutputFile>
@@ -242,11 +305,12 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <ProgramDataBaseFileName>..\lib\PocoNetSSLmdd.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <OutputFile>..\lib\PocoNetSSLmdd.lib</OutputFile>
@@ -267,11 +331,12 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
-      <PrecompiledHeader/>
+      <PrecompiledHeader />
       <ProgramDataBaseFileName>..\lib\PocoNetSSLmd.pdb</ProgramDataBaseFileName>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat/>
+      <DebugInformationFormat />
       <CompileAs>Default</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Lib>
       <AdditionalDependencies>libeay32md.lib;ssleay32md.lib;Crypt32.lib;ws2_32.lib;iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -279,63 +344,63 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\Poco\Net\AcceptCertificateHandler.h"/>
-    <ClInclude Include="include\Poco\Net\CertificateHandlerFactory.h"/>
-    <ClInclude Include="include\Poco\Net\CertificateHandlerFactoryMgr.h"/>
-    <ClInclude Include="include\Poco\Net\ConsoleCertificateHandler.h"/>
-    <ClInclude Include="include\Poco\Net\Context.h"/>
-    <ClInclude Include="include\Poco\Net\HTTPSClientSession.h"/>
-    <ClInclude Include="include\Poco\Net\HTTPSSessionInstantiator.h"/>
-    <ClInclude Include="include\Poco\Net\HTTPSStreamFactory.h"/>
-    <ClInclude Include="include\Poco\Net\InvalidCertificateHandler.h"/>
-    <ClInclude Include="include\Poco\Net\KeyConsoleHandler.h"/>
-    <ClInclude Include="include\Poco\Net\KeyFileHandler.h"/>
-    <ClInclude Include="include\Poco\Net\NetSSL.h"/>
-    <ClInclude Include="include\Poco\Net\PrivateKeyFactory.h"/>
-    <ClInclude Include="include\Poco\Net\PrivateKeyFactoryMgr.h"/>
-    <ClInclude Include="include\Poco\Net\PrivateKeyPassphraseHandler.h"/>
-    <ClInclude Include="include\Poco\Net\RejectCertificateHandler.h"/>
-    <ClInclude Include="include\Poco\Net\SecureServerSocket.h"/>
-    <ClInclude Include="include\Poco\Net\SecureServerSocketImpl.h"/>
-    <ClInclude Include="include\Poco\Net\SecureSMTPClientSession.h"/>
-    <ClInclude Include="include\Poco\Net\SecureSocketImpl.h"/>
-    <ClInclude Include="include\Poco\Net\SecureStreamSocket.h"/>
-    <ClInclude Include="include\Poco\Net\SecureStreamSocketImpl.h"/>
-    <ClInclude Include="include\Poco\Net\Session.h"/>
-    <ClInclude Include="include\Poco\Net\SSLException.h"/>
-    <ClInclude Include="include\Poco\Net\SSLManager.h"/>
-    <ClInclude Include="include\Poco\Net\Utility.h"/>
-    <ClInclude Include="include\Poco\Net\VerificationErrorArgs.h"/>
-    <ClInclude Include="include\Poco\Net\X509Certificate.h"/>
+    <ClInclude Include="include\Poco\Net\AcceptCertificateHandler.h" />
+    <ClInclude Include="include\Poco\Net\CertificateHandlerFactory.h" />
+    <ClInclude Include="include\Poco\Net\CertificateHandlerFactoryMgr.h" />
+    <ClInclude Include="include\Poco\Net\ConsoleCertificateHandler.h" />
+    <ClInclude Include="include\Poco\Net\Context.h" />
+    <ClInclude Include="include\Poco\Net\HTTPSClientSession.h" />
+    <ClInclude Include="include\Poco\Net\HTTPSSessionInstantiator.h" />
+    <ClInclude Include="include\Poco\Net\HTTPSStreamFactory.h" />
+    <ClInclude Include="include\Poco\Net\InvalidCertificateHandler.h" />
+    <ClInclude Include="include\Poco\Net\KeyConsoleHandler.h" />
+    <ClInclude Include="include\Poco\Net\KeyFileHandler.h" />
+    <ClInclude Include="include\Poco\Net\NetSSL.h" />
+    <ClInclude Include="include\Poco\Net\PrivateKeyFactory.h" />
+    <ClInclude Include="include\Poco\Net\PrivateKeyFactoryMgr.h" />
+    <ClInclude Include="include\Poco\Net\PrivateKeyPassphraseHandler.h" />
+    <ClInclude Include="include\Poco\Net\RejectCertificateHandler.h" />
+    <ClInclude Include="include\Poco\Net\SecureServerSocket.h" />
+    <ClInclude Include="include\Poco\Net\SecureServerSocketImpl.h" />
+    <ClInclude Include="include\Poco\Net\SecureSMTPClientSession.h" />
+    <ClInclude Include="include\Poco\Net\SecureSocketImpl.h" />
+    <ClInclude Include="include\Poco\Net\SecureStreamSocket.h" />
+    <ClInclude Include="include\Poco\Net\SecureStreamSocketImpl.h" />
+    <ClInclude Include="include\Poco\Net\Session.h" />
+    <ClInclude Include="include\Poco\Net\SSLException.h" />
+    <ClInclude Include="include\Poco\Net\SSLManager.h" />
+    <ClInclude Include="include\Poco\Net\Utility.h" />
+    <ClInclude Include="include\Poco\Net\VerificationErrorArgs.h" />
+    <ClInclude Include="include\Poco\Net\X509Certificate.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AcceptCertificateHandler.cpp"/>
-    <ClCompile Include="src\CertificateHandlerFactory.cpp"/>
-    <ClCompile Include="src\CertificateHandlerFactoryMgr.cpp"/>
-    <ClCompile Include="src\ConsoleCertificateHandler.cpp"/>
-    <ClCompile Include="src\Context.cpp"/>
-    <ClCompile Include="src\HTTPSClientSession.cpp"/>
-    <ClCompile Include="src\HTTPSSessionInstantiator.cpp"/>
-    <ClCompile Include="src\HTTPSStreamFactory.cpp"/>
-    <ClCompile Include="src\InvalidCertificateHandler.cpp"/>
-    <ClCompile Include="src\KeyConsoleHandler.cpp"/>
-    <ClCompile Include="src\KeyFileHandler.cpp"/>
-    <ClCompile Include="src\PrivateKeyFactory.cpp"/>
-    <ClCompile Include="src\PrivateKeyFactoryMgr.cpp"/>
-    <ClCompile Include="src\PrivateKeyPassphraseHandler.cpp"/>
-    <ClCompile Include="src\RejectCertificateHandler.cpp"/>
-    <ClCompile Include="src\SecureServerSocket.cpp"/>
-    <ClCompile Include="src\SecureServerSocketImpl.cpp"/>
-    <ClCompile Include="src\SecureSMTPClientSession.cpp"/>
-    <ClCompile Include="src\SecureSocketImpl.cpp"/>
-    <ClCompile Include="src\SecureStreamSocket.cpp"/>
-    <ClCompile Include="src\SecureStreamSocketImpl.cpp"/>
-    <ClCompile Include="src\Session.cpp"/>
-    <ClCompile Include="src\SSLException.cpp"/>
-    <ClCompile Include="src\SSLManager.cpp"/>
-    <ClCompile Include="src\Utility.cpp"/>
-    <ClCompile Include="src\VerificationErrorArgs.cpp"/>
-    <ClCompile Include="src\X509Certificate.cpp"/>
+    <ClCompile Include="src\AcceptCertificateHandler.cpp" />
+    <ClCompile Include="src\CertificateHandlerFactory.cpp" />
+    <ClCompile Include="src\CertificateHandlerFactoryMgr.cpp" />
+    <ClCompile Include="src\ConsoleCertificateHandler.cpp" />
+    <ClCompile Include="src\Context.cpp" />
+    <ClCompile Include="src\HTTPSClientSession.cpp" />
+    <ClCompile Include="src\HTTPSSessionInstantiator.cpp" />
+    <ClCompile Include="src\HTTPSStreamFactory.cpp" />
+    <ClCompile Include="src\InvalidCertificateHandler.cpp" />
+    <ClCompile Include="src\KeyConsoleHandler.cpp" />
+    <ClCompile Include="src\KeyFileHandler.cpp" />
+    <ClCompile Include="src\PrivateKeyFactory.cpp" />
+    <ClCompile Include="src\PrivateKeyFactoryMgr.cpp" />
+    <ClCompile Include="src\PrivateKeyPassphraseHandler.cpp" />
+    <ClCompile Include="src\RejectCertificateHandler.cpp" />
+    <ClCompile Include="src\SecureServerSocket.cpp" />
+    <ClCompile Include="src\SecureServerSocketImpl.cpp" />
+    <ClCompile Include="src\SecureSMTPClientSession.cpp" />
+    <ClCompile Include="src\SecureSocketImpl.cpp" />
+    <ClCompile Include="src\SecureStreamSocket.cpp" />
+    <ClCompile Include="src\SecureStreamSocketImpl.cpp" />
+    <ClCompile Include="src\Session.cpp" />
+    <ClCompile Include="src\SSLException.cpp" />
+    <ClCompile Include="src\SSLManager.cpp" />
+    <ClCompile Include="src\Utility.cpp" />
+    <ClCompile Include="src\VerificationErrorArgs.cpp" />
+    <ClCompile Include="src\X509Certificate.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\DLLVersion.rc">
@@ -343,8 +408,9 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='debug_static_mt|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='release_static_md|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='release_static_mt|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='reldeb_static_mt|Win32'">true</ExcludedFromBuild>
     </ResourceCompile>
   </ItemGroup>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
