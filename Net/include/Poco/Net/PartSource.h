@@ -43,7 +43,7 @@ public:
 	virtual const std::string& filename() const;
 		/// Returns the filename for the part or attachment.
 		///
-		/// May be overridded by subclasses. The default
+		/// May be overridden by subclasses. The default
 		/// implementation returns an empty string.
 	
 	const std::string& mediaType() const;
@@ -65,7 +65,8 @@ public:
 	virtual ~PartSource();
 		/// Destroys the PartSource.
 	
-	static const int         UNKNOWN_CONTENT_LENGTH;
+	static const int UNKNOWN_CONTENT_LENGTH;
+
 protected:
 	PartSource();
 		/// Creates the PartSource, using
