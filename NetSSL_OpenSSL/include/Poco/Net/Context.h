@@ -224,7 +224,10 @@ public:
 		
 	void addChainCertificate(const Poco::Crypto::X509Certificate& certificate);
 		/// Adds a certificate for certificate chain validation.
-		
+
+	void addCertificateAuthority(const Poco::Crypto::X509Certificate& certificate);
+		/// Add one trusted certification authority to be used by the Context.
+
 	void usePrivateKey(const Poco::Crypto::RSAKey& key);
 		/// Sets the private key to be used by the Context.
 		///
