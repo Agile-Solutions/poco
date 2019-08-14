@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JWT", "JWT_CE_vs90.vcproj", "{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSuite", "testsuite\TestSuite_CE_vs90.vcproj", "{96CF3103-E49E-3F5E-A11D-6DBCDA043053}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7} = {EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_shared|Digi JumpStart (ARMV4I) = debug_shared|Digi JumpStart (ARMV4I)
+		release_shared|Digi JumpStart (ARMV4I) = release_shared|Digi JumpStart (ARMV4I)
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Digi JumpStart (ARMV4I).ActiveCfg = debug_shared|Digi JumpStart (ARMV4I)
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Digi JumpStart (ARMV4I).Build.0 = debug_shared|Digi JumpStart (ARMV4I)
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Digi JumpStart (ARMV4I).Deploy.0 = debug_shared|Digi JumpStart (ARMV4I)
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Digi JumpStart (ARMV4I).ActiveCfg = release_shared|Digi JumpStart (ARMV4I)
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Digi JumpStart (ARMV4I).Build.0 = release_shared|Digi JumpStart (ARMV4I)
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Digi JumpStart (ARMV4I).Deploy.0 = release_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Digi JumpStart (ARMV4I).ActiveCfg = debug_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Digi JumpStart (ARMV4I).Build.0 = debug_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Digi JumpStart (ARMV4I).Deploy.0 = debug_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Digi JumpStart (ARMV4I).ActiveCfg = release_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Digi JumpStart (ARMV4I).Build.0 = release_shared|Digi JumpStart (ARMV4I)
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Digi JumpStart (ARMV4I).Deploy.0 = release_shared|Digi JumpStart (ARMV4I)
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

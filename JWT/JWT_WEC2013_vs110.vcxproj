@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ClCompile Include="src\ECDSASignature.cpp"/>
+    <ClCompile Include="src\JWTException.cpp"/>
+    <ClCompile Include="src\Serializer.cpp"/>
+    <ClCompile Include="src\Signer.cpp"/>
+    <ClCompile Include="src\Token.cpp"/>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>JWT</ProjectName>
+    <ProjectGuid>{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}</ProjectGuid>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <EnableRedirectPlatform>true</EnableRedirectPlatform>
+    <RedirectPlatformValue>SDK_AM335X_SK_WEC2013_V300</RedirectPlatformValue>
+    <PlatformToolset>CE800</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props"/>
+  <ImportGroup Label="ExtensionSettings"/>
+  <PropertyGroup Label="UserMacros"/>
+  <PropertyGroup>
+    <_ProjectFileVersion>11.0.61030.0</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='debug_shared|SDK_AM335X_SK_WEC2013_V300'">PocoJWTd</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='release_shared|SDK_AM335X_SK_WEC2013_V300'">PocoJWT</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup/>
+  <ItemGroup>
+    <ClInclude Include="include\Poco\JWT\ECDSASignature.h"/>
+    <ClInclude Include="include\Poco\JWT\JWT.h"/>
+    <ClInclude Include="include\Poco\JWT\JWTException.h"/>
+    <ClInclude Include="include\Poco\JWT\Serializer.h"/>
+    <ClInclude Include="include\Poco\JWT\Signer.h"/>
+    <ClInclude Include="include\Poco\JWT\Token.h"/>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\DLLVersion.rc"/>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
+  <ImportGroup Label="ExtensionTargets"/>
+</Project>

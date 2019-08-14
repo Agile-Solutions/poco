@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JWT", "JWT_vs120.vcxproj", "{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TestSuite", "testsuite\TestSuite_vs120.vcxproj", "{96CF3103-E49E-3F5E-A11D-6DBCDA043053}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7} = {EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		debug_shared|Win32 = debug_shared|Win32
+		release_shared|Win32 = release_shared|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Win32.ActiveCfg = debug_shared|Win32
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Win32.Build.0 = debug_shared|Win32
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.debug_shared|Win32.Deploy.0 = debug_shared|Win32
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Win32.ActiveCfg = release_shared|Win32
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Win32.Build.0 = release_shared|Win32
+		{EFE871AE-A00F-4EB5-B816-FA316EAB9DA7}.release_shared|Win32.Deploy.0 = release_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Win32.ActiveCfg = debug_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Win32.Build.0 = debug_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.debug_shared|Win32.Deploy.0 = debug_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Win32.ActiveCfg = release_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Win32.Build.0 = release_shared|Win32
+		{96CF3103-E49E-3F5E-A11D-6DBCDA043053}.release_shared|Win32.Deploy.0 = release_shared|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
